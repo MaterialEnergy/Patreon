@@ -1,0 +1,103 @@
+---- Minecraft Crash Report ----
+// Ouch. That hurt :(
+
+Time: 1/19/15 10:19 PM
+Description: There was a severe problem during mod loading that has caused the game to fail
+
+cpw.mods.fml.common.LoaderException: java.lang.NoSuchMethodError: net.minecraft.client.settings.KeyBinding.setKeyCode(I)V
+	at cpw.mods.fml.common.LoadController.transition(LoadController.java:162)
+	at cpw.mods.fml.common.Loader.preinitializeMods(Loader.java:515)
+	at cpw.mods.fml.client.FMLClientHandler.beginMinecraftLoading(FMLClientHandler.java:239)
+	at net.minecraft.client.Minecraft.func_71384_a(Minecraft.java:480)
+	at net.minecraft.client.Minecraft.func_99999_d(Minecraft.java:867)
+	at net.minecraft.client.main.Main.main(SourceFile:148)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at net.minecraft.launchwrapper.Launch.launch(Launch.java:135)
+	at net.minecraft.launchwrapper.Launch.main(Launch.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.multimc.onesix.OneSixLauncher.launchWithMainClass(OneSixLauncher.java:286)
+	at org.multimc.onesix.OneSixLauncher.launch(OneSixLauncher.java:376)
+	at org.multimc.EntryPoint.listen(EntryPoint.java:165)
+	at org.multimc.EntryPoint.main(EntryPoint.java:54)
+Caused by: java.lang.NoSuchMethodError: net.minecraft.client.settings.KeyBinding.setKeyCode(I)V
+	at net.dries007.holoInventory.client.KeyManager.<init>(KeyManager.java:46)
+	at net.dries007.holoInventory.client.ClientHandler.<clinit>(ClientHandler.java:43)
+	at net.dries007.holoInventory.util.ClientProxy.preInit(ClientProxy.java:36)
+	at net.dries007.holoInventory.HoloInventory.fmlEvent(HoloInventory.java:74)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at cpw.mods.fml.common.FMLModContainer.handleModStateEvent(FMLModContainer.java:513)
+	at sun.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.google.common.eventbus.EventSubscriber.handleEvent(EventSubscriber.java:74)
+	at com.google.common.eventbus.SynchronizedEventSubscriber.handleEvent(SynchronizedEventSubscriber.java:47)
+	at com.google.common.eventbus.EventBus.dispatch(EventBus.java:322)
+	at com.google.common.eventbus.EventBus.dispatchQueuedEvents(EventBus.java:304)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:275)
+	at cpw.mods.fml.common.LoadController.sendEventToModContainer(LoadController.java:208)
+	at cpw.mods.fml.common.LoadController.propogateStateMessage(LoadController.java:187)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.google.common.eventbus.EventSubscriber.handleEvent(EventSubscriber.java:74)
+	at com.google.common.eventbus.SynchronizedEventSubscriber.handleEvent(SynchronizedEventSubscriber.java:47)
+	at com.google.common.eventbus.EventBus.dispatch(EventBus.java:322)
+	at com.google.common.eventbus.EventBus.dispatchQueuedEvents(EventBus.java:304)
+	at com.google.common.eventbus.EventBus.post(EventBus.java:275)
+	at cpw.mods.fml.common.LoadController.distributeStateMessage(LoadController.java:118)
+	at cpw.mods.fml.common.Loader.preinitializeMods(Loader.java:513)
+	... 18 more
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 1.7.10
+	Operating System: Windows 8.1 (amd64) version 6.3
+	Java Version: 1.8.0_25, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 451603176 bytes (430 MB) / 653262848 bytes (623 MB) up to 954728448 bytes (910 MB)
+	JVM Flags: 3 total; -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump -Xms512m -Xmx1024m
+	AABB Pool Size: 0 (0 bytes; 0 MB) allocated, 0 (0 bytes; 0 MB) used
+	IntCache: cache: 0, tcache: 0, allocated: 0, tallocated: 0
+	FML: MCP v9.05 FML v7.10.85.1286 Minecraft Forge 10.13.2.1286 26 mods loaded, 26 mods active
+	mcp{9.05} [Minecraft Coder Pack] (minecraft.jar) Unloaded->Constructed->Pre-initialized
+	FML{7.10.85.1286} [Forge Mod Loader] (forge-1.7.10-10.13.2.1286-universal.jar) Unloaded->Constructed->Pre-initialized
+	Forge{10.13.2.1286} [Minecraft Forge] (forge-1.7.10-10.13.2.1286-universal.jar) Unloaded->Constructed->Pre-initialized
+	CodeChickenCore{1.0.4.35} [CodeChicken Core] (minecraft.jar) Unloaded->Constructed->Pre-initialized
+	<CoFH ASM>{000} [CoFH ASM Data Initialization] (minecraft.jar) Unloaded->Constructed->Pre-initialized
+	MobiusCore{1.2.3} [MobiusCore] (minecraft.jar) Unloaded->Constructed->Pre-initialized
+	NotEnoughItems{1.0.4.83} [Not Enough Items] (NotEnoughItems-1.7.10-1.0.4.83-universal.jar) Unloaded->Constructed->Pre-initialized
+	OpenModsCore{0.6} [OpenModsCore] (minecraft.jar) Unloaded->Constructed->Pre-initialized
+	CarpentersBlocks{3.3.4.2} [Carpenter's Blocks] (Carpenter's Blocks v3.3.4.2 - MC 1.7.10.jar) Unloaded->Constructed->Pre-initialized
+	chisel{2.2.2.3b204ae} [Chisel] (Chisel2_DEV-2.2.2.3b204ae.jar) Unloaded->Constructed->Pre-initialized
+	CoFHCore{1.7.10R3.0.0B9} [CoFH Core] (CoFHCore-[1.7.10]3.0.0B9-40.jar) Unloaded->Constructed->Pre-initialized
+	CustomMainMenu{1.1} [Custom Main Menu] (CustomMainMenu-MC1.7.10-1.1.jar) Unloaded->Constructed->Pre-initialized
+	EnderIO{1.7.10-2.2.6.317} [Ender IO] (EnderIO-1.7.10-2.2.6.317.jar) Unloaded->Constructed->Pre-initialized
+	ThermalFoundation{1.7.10R1.0.0RC1} [Thermal Foundation] (ThermalFoundation-[1.7.10]1.0.0RC1-13 (1).jar) Unloaded->Constructed->Pre-initialized
+	ExtraUtilities{1.2.1} [Extra Utilities] (extrautilities-1.2.1.jar) Unloaded->Constructed->Pre-initialized
+	HoloInventory{1.8.3.103} [HoloInventory] (HoloInventory-1.7.10-1.8.3.103-dev.jar) Unloaded->Constructed->Errored
+	iChunUtil{4.1.3} [iChunUtil] (iChunUtil-4.1.3.jar) Unloaded->Constructed->Pre-initialized
+	inventorytweaks{1.59-dev-152-cf6e263} [Inventory Tweaks] (InventoryTweaks-1.59-dev-152.jar) Unloaded->Constructed->Pre-initialized
+	minechem{5.0.5.369} [Minechem] (Minechem-1.7.10-5.0.5.369.jar) Unloaded->Constructed->Pre-initialized
+	OpenMods{0.6} [OpenMods] (OpenModsLib-1.7.10-0.6.jar) Unloaded->Constructed->Pre-initialized
+	ResourceLoader{1.0} [Resource Loader] (ResourceLoader-1.0.jar) Unloaded->Constructed->Pre-initialized
+	Waila{1.5.8} [Waila] (Waila-1.5.8a_1.7.10.jar) Unloaded->Constructed->Pre-initialized
+	Sync{4.0.0} [Sync] (Sync-4.0.0.jar) Unloaded->Constructed->Pre-initialized
+	ThermalExpansion{1.7.10R4.0.0B8} [Thermal Expansion] (ThermalExpansion-[1.7.10]4.0.0B8-23 (1).jar) Unloaded->Constructed->Pre-initialized
+	worldedit{6.0-beta-01} [WorldEdit] (worldedit-forge-mc1.7.10-6.0-beta-01.jar) Unloaded->Constructed->Pre-initialized
+	Ztones{1.7.10} [Ztones] (Ztones-1.7.10-2.2.1.jar) Unloaded->Constructed->Pre-initialized
+	OpenModsLib crash transformers: [stencil_patches:FINISHED],[movement_callback:FINISHED],[map_gen_fix:ENABLED],[gl_capabilities_hook:FINISHED],[player_render_hook:FINISHED]
+	Stencil buffer state: Function set: GL30, pool: internal, bits: 8
